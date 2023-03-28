@@ -34,7 +34,7 @@ export class PostComponent implements OnInit {
         console.log('res', res);
         if (res && res['id']) {
           this.id = res['id'];
-          this.editorJsUrl = `/api/wiki/posts/${this.id}`;
+          this.editorJsUrl = `/api/wiki/posts/${this.id}/blocks`;
         }
       }
     })
