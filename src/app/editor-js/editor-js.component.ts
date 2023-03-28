@@ -57,10 +57,9 @@ export class EditorJsComponent implements OnInit {
       })
       .subscribe({
         next: val => {
-          console.log('val', val['blocks']);
           this.editor = new EditorJS({
             ...this.instanceConfig,
-            data: {...val['blocks']}
+            data: {...val['content']}
           })
           console.log('editor', this.editor);
         }, error: () => {

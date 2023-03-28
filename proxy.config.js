@@ -8,7 +8,7 @@ const PROXY_CONFIG = [
       '/tcstorage/**',
       "/devupl/**",
     ],
-    target: 'https://thilo.services',
+    target: 'http://localhost:8800',
     secure: false,
     ws: true,
     changeOrigin: true,
