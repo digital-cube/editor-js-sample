@@ -56,12 +56,11 @@ export class EditorJsComponent implements OnInit {
         }
       })
       .subscribe({
-        next: val => {
+        next: (val: any) => {
           this.editor = new EditorJS({
             ...this.instanceConfig,
-            data: {...val['content']}
+            data: val
           })
-          console.log('editor', this.editor);
         }, error: () => {
           this.editor = new EditorJS({
             ...this.instanceConfig
