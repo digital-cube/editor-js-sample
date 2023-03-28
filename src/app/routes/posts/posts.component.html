@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let post of posts">
+    <a [href]="'posts/' + post.id">{{post.created_by_display_name}}; created: {{post.created | date}}; title: {{post.title}}</a>
+  </li>
+</ul>
+
+
+<button (click)="onCreatePost()">create new</button>

@@ -49,12 +49,18 @@ export class EditorJsComponent implements OnInit {
       })
     }
 
-    this.http.get(this.instanceUrl)
+    this.http.get(this.instanceUrl,
+      {
+        headers: {
+          Authorization: 'Bearer' + ' ' + localStorage.getItem('jwt')
+        }
+      })
       .subscribe({
         next: val => {
+          console.log('val', val['blocks']);
           this.editor = new EditorJS({
             ...this.instanceConfig,
-            data: {...val['content']}
+            data: {...val['blocks']}
           })
           console.log('editor', this.editor);
         }, error: () => {
@@ -96,7 +102,11 @@ export class EditorJsComponent implements OnInit {
       } else { // 3) If we change a block
         body['index'] = event.detail.index;
       }
-      this.http.patch(this.instanceUrl, body)
+      this.http.patch(this.instanceUrl, body, {
+        headers: {
+          Authorization: 'Bearer' + ' ' + localStorage.getItem('jwt')
+        }
+      })
         .subscribe();
     }).catch((err) => {
       console.log('err', err);

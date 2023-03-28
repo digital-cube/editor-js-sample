@@ -8,7 +8,7 @@ const PROXY_CONFIG = [
       '/tcstorage/**',
       "/devupl/**",
     ],
-    target: 'https://dev1.impresaone.digitalcube.dev',
+    target: 'https://thilo.services',
     secure: false,
     ws: true,
     changeOrigin: true,
