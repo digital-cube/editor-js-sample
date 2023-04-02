@@ -8,6 +8,7 @@ const PROXY_CONFIG = [
       '/tcstorage/**',
       "/devupl/**",
     ],
+//    target: 'https://blog.marko.digitalcube.dev',
     target: 'http://localhost:8800',
     secure: false,
     ws: true,

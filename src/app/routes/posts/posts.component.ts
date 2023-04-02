@@ -22,7 +22,7 @@ export class PostsComponent implements OnInit {
     }).subscribe({
       next: res => {
         console.log('res', res);
-        this.posts = res['items'];
+        this.posts = res['data'];
       }
     })
   }
